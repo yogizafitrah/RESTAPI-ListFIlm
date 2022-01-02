@@ -1,3 +1,4 @@
+from re import search
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask.json import jsonify
 from flask_mysqldb import MySQL
@@ -25,10 +26,16 @@ def Index():
     cur.execute("SELECT  * FROM film")
     data = cur.fetchall()
     cur.close()
-
     return render_template('index2.html', film=data )
 
-
+@app.route('/search',methods=['POST','GET'])
+def search():
+    cur = mysql.connection.cursor()
+    if request.method == "POST":
+        search = request.form['search']
+        cur.execute("SELECT * FROM film WHERE title LIKE %s OR genre LIKE %s ", ('%'+search+'%','%'+search+'%'))
+        data = cur.fetchall()
+        return render_template('index2.html', film=data )
 
 @app.route('/insert', methods = ['POST'])
 def insert():
