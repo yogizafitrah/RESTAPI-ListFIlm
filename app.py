@@ -11,9 +11,9 @@ from werkzeug.wrappers import response
 app = Flask(__name__)
 app.secret_key = 'many random bytes'
 
-app.config['MYSQL_HOST'] = '103.19.208.58'
+app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Coeg123@'
+app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'film'
 
 mysql = MySQL(app)
