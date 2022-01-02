@@ -41,7 +41,22 @@
     {%endwith%}
 
 
+    <form action="/search" method="POST">
 
+               
+      <div class="form-group">
+         <label for="name">Search Title or Genre</label>
+         
+         <input type="text" class="form-control" name="search" id="search" required = "1" >
+
+      <div class="form-group">
+<!-- 
+         <a href="/search/"search class="btn btn-warning btn-xs" data-toggle="modal">Search</a> -->
+         <button class="btn btn-primary" type="submit">Search</button>
+      </div>
+
+
+   </form>
 
             <table class="table table-striped">
 
