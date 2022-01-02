@@ -1,5 +1,6 @@
 # RESTAPI-ListFIlm
  A Rest API With Flask and MySQL
+ - Menjalankan aplikasi di localhost
  - Menjalankan file app.py di python 3.9.5
  - File berupa Flask dengn environment di requirements.txt
  - Aplikasi berjalan menggunakan database MySQL, file backup film.sql 
